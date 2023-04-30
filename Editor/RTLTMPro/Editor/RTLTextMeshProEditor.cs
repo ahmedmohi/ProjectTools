@@ -3,7 +3,9 @@ using UnityEditor;
 using UnityEngine;
 
 #if TMP_VERSION_2_1_0_OR_NEWER
+
 using TMP_UiEditorPanel = TMPro.EditorUtilities.TMP_EditorPanelUI;
+
 #else
 using TMP_UiEditorPanel = TMPro.EditorUtilities.TMP_UiEditorPanel;
 #endif
@@ -13,6 +15,7 @@ namespace RTLTMPro
     [CustomEditor(typeof(RTLTextMeshPro)), CanEditMultipleObjects]
     public class RTLTextMeshProEditor : TMP_UiEditorPanel
     {
+        private SerializedProperty stringReferenceProp;
         private SerializedProperty originalTextProp;
         private SerializedProperty preserveNumbersProp;
         private SerializedProperty farsiProp;
@@ -31,6 +34,7 @@ namespace RTLTMPro
             fixTagsProp = serializedObject.FindProperty("fixTags");
             forceFixProp = serializedObject.FindProperty("forceFix");
             originalTextProp = serializedObject.FindProperty("originalText");
+            stringReferenceProp = serializedObject.FindProperty("m_LocalizedStringReference");
         }
 
         public override void OnInspectorGUI()
@@ -40,6 +44,8 @@ namespace RTLTMPro
 
             EditorGUILayout.Space();
             EditorGUI.BeginChangeCheck();
+            EditorGUILayout.PropertyField(stringReferenceProp, new GUIContent("Localized Table"));
+
             EditorGUILayout.PropertyField(originalTextProp, new GUIContent("RTL Text Input Box"));
 
             ListenForZeroWidthNoJoiner();

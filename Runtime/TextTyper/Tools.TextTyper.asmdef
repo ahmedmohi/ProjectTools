@@ -1,12 +1,11 @@
 {
-    "name": "com.mohi.project-tools.Editor",
+    "name": "RedBlueGames.TextTyper",
     "rootNamespace": "",
     "references": [
-        "GUID:ca937d03ee5dd4d699091438dc0f3ae5"
+        "GUID:1fbc052e3ea2ff24b8874f1cedb59b6c",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
