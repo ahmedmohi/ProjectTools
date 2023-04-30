@@ -8,7 +8,7 @@
     using UnityEngine.Events;
     using UnityEngine.UI;
     using System;
-
+    using UnityEngine.Localization;
 
     /// <summary>
     /// Type text component types out Text one character at a time. Heavily adapted from synchrok's GitHub project.
